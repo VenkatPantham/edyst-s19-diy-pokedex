@@ -4,7 +4,7 @@ app=Flask(__name__)
 
 @app.route('/api/pokemon/<id>')
 def id(id):
-    if int(id) <= 151:
+    if int(id) <= 151 and int(id)>=1:
         data=requests.get('https://pokeapi.co/api/v2/pokemon-form/'+id).json()
         num=data['id']
         name=data['name']
