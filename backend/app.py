@@ -8,8 +8,9 @@ def id(id):
         data=requests.get('https://pokeapi.co/api/v2/pokemon-form/'+id).json()
         num=data['id']
         name=data['name']
-        sprite=data['sprites']
-        return jsonify({'id':num,'name':name,'sprite':sprite})
+        sprites=data['sprites']
+        front_default=sprites['front_default']
+        return jsonify({'id':num,'name':name,'sprite':front_default})
     else:
         return ('Pokemon not found,Sorry We have only 807 types of Pokemons!')
 
