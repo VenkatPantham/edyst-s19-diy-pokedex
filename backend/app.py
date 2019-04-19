@@ -13,7 +13,7 @@ def id(id):
     else:
         return('<h1>404 Page Not Found</h1>')
 @app.errorhandler(404)                                              # Handling 404 Error
-def page_not_found(e=None):
+def page_not_found(e):
     return render_template('404.html'),404
 
 if __name__ == '__main__':
