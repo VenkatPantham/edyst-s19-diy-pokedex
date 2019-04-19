@@ -2,7 +2,7 @@
 The backend folder consists of app.py,requirements.txt,pokemon_data.json
 
 app.py:
-    This file is an used as API service which is used to display the pokemon data according to the id from the pokemon_data.json file
+    This file is an used as API service which is used to display the pokemon data in JSON fomrat according to the id from the pokemon_data.json file
 
 pokemon_data.json:
     This file consists of all the pokemon data in JSON format which is used by app.py 
