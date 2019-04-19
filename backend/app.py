@@ -5,7 +5,7 @@ app=Flask(__name__)                                                 # Initializi
 
 @app.route('/api/pokemon/<int:id>')                                 
 def id(id):
-    if(id>0):
+    if(id>0 and id<152):
         json_data=open('pokemon_data.json')                        # Opening Pokemon Data JSON File
         data=json.load(json_data)                                  # Loading Pokemon Data
         pokemon=data[id-1]                                         # Stroing required details into a variable
