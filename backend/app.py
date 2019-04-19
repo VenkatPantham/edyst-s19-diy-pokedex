@@ -14,7 +14,7 @@ def id(id):
         return('<h1>404 Page Not Found</h1>')
 @app.errorhandler(404)                                              # Handling 404 Error
 def page_not_found(e=None):
-    return('<h1>404 Page Not Found</h1>')
+    return render_template('404.html'),404
 
 if __name__ == '__main__':
     app.run(host='localhost',port=8006,debug=True)
