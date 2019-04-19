@@ -3,10 +3,6 @@ import json,requests
 
 app=Flask(__name__)                                                 # Initializing Flask
 
-@app.errorhandler(404)                                              # Handling 404 Error
-def error(e):
-    return render_template('404.html'), 404
-
 @app.route('/api/pokemon/<int:id>')                                 
 def id(id):
     if(id>0):
@@ -16,5 +12,9 @@ def id(id):
         return jsonify(pokemon)                                    # Displaying required JSON data
     else:
         return('<h1>404 Page Not Found</h1>')
+@app.errorhandler(404)                                              # Handling 404 Error
+def page_not_found(e=None):
+    return('<h1>404 Page Not Found</h1>')
+
 if __name__ == '__main__':
     app.run(host='localhost',port=8006,debug=True)
