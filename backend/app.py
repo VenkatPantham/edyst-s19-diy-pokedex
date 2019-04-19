@@ -7,8 +7,7 @@ def id(id):
     if(id>0 and id<152):
         json_data=open('pokemon_data.json')                        # Opening Pokemon Data JSON File
         data=json.load(json_data)                                  # Loading Pokemon Data
-        pokemon=data[id-1]                                         # Stroing required details into a variable
-        return jsonify(pokemon)                                    # Displaying required JSON data
+        return jsonify(data[id-1])                                 # Displaying required JSON data
     else:
         return('<h1>404 Page Not Found</h1>')
 @app.errorhandler(404)                                              # Handling 404 Error
