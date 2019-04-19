@@ -5,9 +5,8 @@ app=Flask(__name__)                                                 # Initializi
 @app.route('/api/pokemon/<int:id>')                                 
 def id(id):
     if(id>0 and id<152):
-        json_data=open('pokemon_data.json')                        # Opening Pokemon Data JSON File
-        data=json.load(json_data)                                  # Loading Pokemon Data
-        return jsonify(data[id-1])                                 # Displaying required JSON data
+        data=json.load(open('pokemon_data.json'))                        # Opening and Loading Pokemon Data JSON File
+        return jsonify(data[id-1])                                       # Displaying required JSON data
     else:
         return('<h1>404 Page Not Found</h1>')
 @app.errorhandler(404)                                              # Handling 404 Error
