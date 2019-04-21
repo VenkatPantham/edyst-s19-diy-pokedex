@@ -1,1 +1,0 @@
-# edyst-s19-diy-pokedex
